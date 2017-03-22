@@ -11,7 +11,6 @@ namespace PSFiles.Utils
     {
         #region Private fields
         private string _filePath;
-        private int _antalFiler;
         private long _actualFileSize;
         private long _splitFileSize;
         #endregion
@@ -43,15 +42,6 @@ namespace PSFiles.Utils
         {
             get { return _filePath; }
             set { _filePath = value; }
-        }
-        /// <summary>
-        /// Gets or sets the antal filer.
-        /// </summary>
-        /// <value>The antal filer.</value>
-        public int AntalFiler
-        {
-            get { return _antalFiler; }
-            set { _antalFiler = value; }
         }
         /// <summary>
         /// Gets or sets the actual size of the file.

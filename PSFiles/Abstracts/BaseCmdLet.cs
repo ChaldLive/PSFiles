@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 using System.Management.Automation;
+using System.IO;
 
 namespace PSFiles.Abstracts
 {
@@ -31,6 +32,14 @@ namespace PSFiles.Abstracts
                     this
                 )
             );
+        }
+        #endregion
+        #region 
+        protected void ValidateFileExists(string fileName)
+        {
+            if (!File.Exists(fileName))
+                ThrowValidatingErrorEx("File does not exist", ErrorCategory.InvalidArgument, "There is no file with the name:[{0}] available in the system", fileName);
+
         }
         #endregion
     }

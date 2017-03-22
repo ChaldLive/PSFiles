@@ -12,9 +12,10 @@ namespace PSFiles.Utils
     {
         #region Private fields
         private List<string> _splitFileNames;
+        private int _numberOfFiles;
         #endregion
         //
-        #region Public constructors
+        #region public TextFileSplitter(string filePath)
         /// <summary>
         /// Initializes a new instance of the <see cref="TextFileSplitter"/> class.
         /// </summary>
@@ -32,6 +33,22 @@ namespace PSFiles.Utils
         }
         #endregion
         //
+        #region public TextFileSplitter(string filePath, int numberOfFiles)
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TextFileSplitter" /> class.
+        /// </summary>
+        /// <param name="filePath">The file path.</param>
+        /// <param name="numberOfFiles">The number of files.</param>
+        public TextFileSplitter(string filePath, int numberOfFiles)
+                    : this(filePath)
+        {
+            if (numberOfFiles < 2)
+                throw new ArgumentException("There should at least be 2 files as a number of split. Does it make sence numberOfFiles?", "int numberOfFiles");
+            NumberOfFiles = numberOfFiles;
+        }
+        #endregion
+
+        //
         #region Public properties
         /// <summary>
         /// Gets the split file names.
@@ -46,6 +63,12 @@ namespace PSFiles.Utils
                 return _splitFileNames;
             }
         }
+
+        public int NumberOfFiles
+        {
+            get{return _numberOfFiles;}
+            set{_numberOfFiles = value;}
+        }
         #endregion
         //
         #region Split()
@@ -54,7 +77,7 @@ namespace PSFiles.Utils
             try
             {
                 DanAktuelleInformationer();
-                SplitFileNames.AddRange(GetSplitFileNames(FilePath, AntalFiler));
+                SplitFileNames.AddRange(GetSplitFileNames(FilePath, NumberOfFiles));
 
                 string line = string.Empty;
                 long readCounter = 0;
@@ -122,7 +145,7 @@ namespace PSFiles.Utils
             //
             if (ActualFileSize > 0)
             {
-                SplitFileSize = ActualFileSize / AntalFiler;
+                SplitFileSize = ActualFileSize / NumberOfFiles;
             }
         }
         #endregion

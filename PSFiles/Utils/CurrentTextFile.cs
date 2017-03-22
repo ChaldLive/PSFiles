@@ -158,7 +158,7 @@ namespace PSFiles.Utils
             }
         }
         #endregion
-
+        //
         #region IDisposable Members
 
         /// <summary>
