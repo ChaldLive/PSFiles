@@ -89,5 +89,39 @@ namespace PSFiles.Utils
         }
         #endregion
 
+        public static bool FileExists(string fileName)
+        {
+            if (string.IsNullOrEmpty(fileName))
+                return false;
+            return File.Exists(fileName);
+        }
+
+        /// <summary>
+        /// This method reads through a file using a textReader,
+        /// and if it cant read it I can assume that the file
+        /// is not a text file.
+        /// </summary>
+        /// <param name="fileName">Name of the file.</param>
+        /// <returns>System.Boolean.</returns>
+        public static bool IsTextFile(string fileName)
+        {
+            bool result = true;
+            try
+            {
+                using (StreamReader sr = File.OpenText(fileName))
+                {
+                    string line = sr.ReadLine();
+                    result = line.All(c => c == (char)10        // New line
+                                        || c == (char)13        // Carriage Return
+                                        || c == (char)11        // Tab
+                                        || !char.IsControl(c)); // Non-control (regular) character
+                }
+            }
+            catch (Exception)
+            {
+                result = false;
+            }
+            return result;
+        }
     }
 }

@@ -63,6 +63,11 @@
     <Compile Include="Utils\TextFileSplitter.cs" />
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <Content Include="Help\PSFiles.dll-help.xml">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>"C:\Windows\Microsoft.NET\Framework\v4.0.30319\InstallUtil.exe" /u $(TargetPath)

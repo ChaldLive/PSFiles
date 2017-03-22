@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<helpItems xmlns="http://msh" schema="maml">
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10">
+    <command:details>
+      <command:name>
+        Split-PSFile This command aids the process of splitting large text files into more managable file chuncks.
+      </command:name>
+      <maml:description>
+        <maml:para>
+        </maml:para>
+      </maml:description>
+      <maml:copyright>
+        <maml:para>Copyright © Chill libs</maml:para>
+      </maml:copyright>
+      <command:verb>Split</command:verb>
+      <dev:version>0.9/B</dev:version>
+    </command:details>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Split-PSFile</maml:name>
+        <command:parameter required="true" position="0">
+          <maml:name>FilePath</maml:name>
+          <maml:description>
+            <maml:para>The unique name of the text file which have to be split up to more manageable chuncks.</maml:para>
+          </maml:description>
+          <command:parameterValue>string</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="true" position="1">
+          <maml:name>NumberOfFiles</maml:name>
+          <maml:description>
+            <maml:para>The number of result files issued as a result of calling this command. The rule is there must be 2 or more files otherwise it doesn’t make sense to carry out this command.</maml:para>
+          </maml:description>
+          <command:parameterValue>System.Int32</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="true" position="0">
+          <maml:name>FilePath</maml:name>
+          <maml:description>
+            <maml:para>The unique name of the text file which have to be split up to more manageable chuncks.</maml:para>
+          </maml:description>
+        <command:parameterValue>string</command:parameterValue>
+      </command:parameter>
+      <command:parameter required="true" position="1">
+          <maml:name>NumberOfFiles</maml:name>
+          <maml:description>
+            <maml:para>The number of result files issued as a result of calling this command. The rule is there must be 2 or more files otherwise it doesn’t make sense to carry out this command.</maml:para>
+          </maml:description>
+      </command:parameter>
+    </command:parameters>
+    <command:examples>
+      <command:example>
+        <maml:title>
+          
+          ------------------------ PSFiles sample on how to use ------------------------
+          This example splits a large text file into 3 manageable text files. The resulting filenames are the output of the call to this ps command           
+          
+        </maml:title>
+        <dev:code>
+          Split-PSFile -FilePath "$:\SomeData\Files\SomeBigData.txt" -NumberOfFiles 3        
+        </dev:code>
+        <dev:remarks>
+          <maml:para>Dette eksempel et tænkt som en mulig script function, der kan kaldes med samme parametre, hvor værdierne kan ændres.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10">
+    <command:details>
+      <command:name>
+        Format-PSFileEx
+      </command:name>
+      <maml:description>
+        <maml:para>
+          Command that expects special formater objects as parameters
+        </maml:para>
+      </maml:description>
+      <maml:copyright>
+        <maml:para>Copyright © Copyright © Chill libs</maml:para>
+      </maml:copyright>
+      <command:verb>Format</command:verb>
+      <dev:version>0.9/B</dev:version>
+    </command:details>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Format-PSFileEx</maml:name>
+        <command:parameter required="true" position="0">
+          <maml:name>A pipeline input of any formater working a textfile.</maml:name>
+          <maml:description>
+            <maml:para>An object instance of a command item .</maml:para>
+          </maml:description>
+          <command:parameterValue>System.Object</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+    </command:parameters>
+    <command:examples>
+      <command:example>
+        <maml:title>
+
+          ------------------------ Facilia server setup eksempel ------------------------
+
+          This example shows how to call with one of the formaters this cmdlet accepts as input.
+        </maml:title>
+        <dev:code>
+        </dev:code>
+        <dev:remarks>
+          <maml:para>.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10">
+    <command:details>
+      <command:name>
+        Get-FaciliaPS_ServerSetup
+      </command:name>
+      <maml:description>
+        <maml:para>
+          Kommando, der viser et navn givent serversetup, hvis der ikke gives noget navn men bruges en "*" vises alle serversetups.
+        </maml:para>
+      </maml:description>
+      <maml:copyright>
+        <maml:para>Copyright © FACILIA FMBA</maml:para>
+      </maml:copyright>
+      <command:verb>Remove</command:verb>
+      <dev:version>0.9/B</dev:version>
+    </command:details>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Remove-FaciliaPS_ServerSetup</maml:name>
+        <command:parameter required="true" position="0">
+          <maml:name>ServerSetupNavn</maml:name>
+          <maml:description>
+            <maml:para>Det unikke navn på den serveropsætning, der skal vises. </maml:para>
+          </maml:description>
+          <command:parameterValue>string</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="true" position="0">
+        <maml:name>ServerSetupNavn</maml:name>
+        <maml:description>
+          <maml:para>Det unikke navn på den serveropsætning, der skal vises.</maml:para>
+        </maml:description>
+        <command:parameterValue>string</command:parameterValue>
+      </command:parameter>
+    </command:parameters>
+    <command:examples>
+      <command:example>
+        <maml:title>
+
+          ------------------------ Facilia server setup eksempel ------------------------
+
+          Dette eksempel viser hvordan der vises et eller flere serversetups.
+        </maml:title>
+        <dev:code>
+          $ServerSetupNavn  = "fac-webudv.facilia.dk"
+          Get-FaciliaPS_ServerSetup -ServerSetupNavn $ServerSetupNavn
+          eller
+          $ServerSetupNavn  = "*"
+          Get-FaciliaPS_ServerSetup -ServerSetupNavn $ServerSetupNavn
+        </dev:code>
+        <dev:remarks>
+          <maml:para>Dette eksempel et tænkt som en mulig script function, der kan kaldes med samme parametre, hvor værdierne kan ændres.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+  </command:command>
+</helpItems>

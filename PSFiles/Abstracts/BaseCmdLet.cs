@@ -34,11 +34,22 @@ namespace PSFiles.Abstracts
             );
         }
         #endregion
-        #region 
+        //
+        #region protected void ValidateFileExists(string fileName)
         protected void ValidateFileExists(string fileName)
         {
             if (!File.Exists(fileName))
                 ThrowValidatingErrorEx("File does not exist", ErrorCategory.InvalidArgument, "There is no file with the name:[{0}] available in the system", fileName);
+
+        }
+        #endregion
+        //
+        #region MyRegion
+        protected void ValidateFileIsTextFile(string fileName)
+        {
+            
+            tryk
+
 
         }
         #endregion

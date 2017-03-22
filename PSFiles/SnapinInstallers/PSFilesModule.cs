@@ -7,7 +7,7 @@ using System.Management.Automation;
 using System.Collections.ObjectModel;
 using System.Management.Automation.Runspaces;
 using System.ComponentModel;
-using FaciliaPS.CmdLets;
+using PSFiles.CmdLets;
 
 namespace PSFiles.SnapinInstallers
 {
@@ -33,6 +33,8 @@ namespace PSFiles.SnapinInstallers
         {
             // Initial example of the shit running 
             AddCmdLet(new CmdletConfigurationEntry("Split-PSFile", typeof(PSFile), @"FaciliaPS.dll-help.xml"));
+            AddCmdLet(new CmdletConfigurationEntry("Join-PSExcelFile", typeof(PSExcelFile), @"FaciliaPS.dll-help.xml"));
+            AddCmdLet(new CmdletConfigurationEntry("Format-PSFileEx", typeof(PSFileEx), @"FaciliaPS.dll-help.xml"));
         }
         #endregion
     }

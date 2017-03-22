@@ -13,6 +13,7 @@ namespace PSFiles.CmdLets
     {
         #region Private fields
         private string _sourceFileName;
+        private string _resultFileName;
         #endregion
         //
         #region MyRegion
@@ -31,7 +32,7 @@ namespace PSFiles.CmdLets
                 Position = 0,
                 ValueFromPipeline = true,
                 ValueFromPipelineByPropertyName = true,
-                HelpMessage = "Sti og fil navn på den fil, der skal behandles og splittes i flere mindre filer."
+                HelpMessage = "Sti og fil navn på den fil, der skal behandles."
             )
         ]
         [ValidateNotNullOrEmpty]
@@ -40,6 +41,22 @@ namespace PSFiles.CmdLets
             get { return _sourceFileName; }
             set { _sourceFileName = value; }
         }
+        [Alias("Dest")]
+        [
+            Parameter
+            (
+                Mandatory = true,
+                Position = 1,
+                HelpMessage = "Sti og fil navn på den fil, hele behanlingen resulterer i."
+            )
+        ]
+        [ValidateNotNullOrEmpty]
+        public string ResultFileName
+        {
+            get { return _resultFileName; }
+            set { _resultFileName = value; }
+        }
+
         #endregion
         //
         #region protected override void BeginProcessing()
